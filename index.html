@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODERWANDA Ltd | WebApp</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f3f6fb;
+            color: #1e293b;
+        }
+
+        header {
+            background: #123c69;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #64748b;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 8px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login {
+            background: #123c69;
+            color: white;
+        }
+
+        .register {
+            background: #16a34a;
+            color: white;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>CODERWANDA Ltd</h2>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to WebApp Project</h1>
+
+        <p>
+            A secure and simple web application
+            for user registration and login.
+        </p>
+
+        <div class="buttons">
+            <a href="/login" class="login">Login</a>
+            <a href="/register" class="register">Create Account</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 CODERWANDA Ltd. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

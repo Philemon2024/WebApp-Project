@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | CODERWANDA Ltd</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f6fb;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-box {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #123c69;
+        }
+
+        p {
+            text-align: center;
+            color: #64748b;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            background: #16a34a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #15803d;
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        a {
+            color: #123c69;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-box">
+
+        <h2>Create Account</h2>
+
+        <p>Join CODERWANDA Ltd WebApp</p>
+
+        <form id="registerForm">
+
+            <label for="fullname">Full Name</label>
+            <input
+                type="text"
+                id="fullname"
+                placeholder="Enter your full name"
+                required
+                minlength="3"
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                required
+                minlength="6"
+            >
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+                required
+                minlength="6"
+            >
+
+            <button type="submit">Register</button>
+
+            <div class="message" id="message"></div>
+
+        </form>
+
+        <div class="links">
+            <p>Already have an account?
+                <a href="/login">Login here</a>
+            </p>
+
+            <a href="/">Back to Home</a>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("registerForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const fullname =
+                    document.getElementById("fullname").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const password =
+                    document.getElementById("password").value;
+
+                const confirmPassword =
+                    document.getElementById("confirmPassword").value;
+
+                const message =
+                    document.getElementById("message");
+
+                if (fullname.length < 3) {
+                    message.style.color = "#dc2626";
+                    message.textContent = "Enter a valid full name.";
+                    return;
+                }
+
+                if (password.length < 6) {
+                    message.style.color = "#dc2626";
+                    message.textContent =
+                        "Password must contain at least 6 characters.";
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    message.style.color = "#dc2626";
+                    message.textContent = "Passwords do not match.";
+                    return;
+                }
+
+                message.style.color = "#16a34a";
+                message.textContent =
+                    "Registration form validated successfully. Account creation will be connected later.";
+            });
+    </script>
+
+</body>
+</html>
