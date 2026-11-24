@@ -1,0 +1,29 @@
+
+name: CodeRwanda CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Verify Docker Installation
+        run: docker --version
+
+      - name: Build Docker Image
+        run: docker build -t coderwanda-app:latest .
+
+      - name: Verify Docker Image
+        run: docker images coderwanda-app
