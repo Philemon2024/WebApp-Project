@@ -153,5 +153,34 @@
             });
     </script>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.querySelector('input[type="password"]');
+
+    if (!passwordInput) return;
+
+    const toggleButton = document.createElement("button");
+    toggleButton.type = "button";
+    toggleButton.textContent = "Show Password";
+
+    toggleButton.style.marginTop = "8px";
+    toggleButton.style.padding = "8px 12px";
+    toggleButton.style.cursor = "pointer";
+    toggleButton.style.borderRadius = "5px";
+    toggleButton.style.border = "1px solid #ccc";
+
+    passwordInput.insertAdjacentElement("afterend", toggleButton);
+
+    toggleButton.addEventListener("click", function () {
+        const isHidden = passwordInput.type === "password";
+
+        passwordInput.type = isHidden ? "text" : "password";
+        toggleButton.textContent = isHidden
+            ? "Hide Password"
+            : "Show Password";
+    });
+});
+</script>
+
 </body>
 </html>
